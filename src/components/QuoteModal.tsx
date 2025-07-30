@@ -4,7 +4,6 @@ import { X, CheckCircle, AlertCircle, Loader2, Building, Search } from 'lucide-r
 import toast from 'react-hot-toast';
 import { calculateTariff, QuestionnaireData } from '../utils/tariffCalculator';
 import { usePappersSearch, usePappersValidation } from '../hooks/usePappers';
-import { sendContractualDocuments } from '../services/emailService';
 
 interface QuoteModalProps {
   isOpen: boolean;
