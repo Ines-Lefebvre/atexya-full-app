@@ -1,0 +1,1 @@
+Ce dossier peut contenir favicon, images, ou fichiers statiques.
