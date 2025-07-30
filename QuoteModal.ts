@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import { Fragment, useState, useEffect } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { X, CheckCircle, AlertCircle, Loader2, Building, Search } from 'lucide-react';
 import toast from 'react-hot-toast';
@@ -11,7 +11,7 @@ interface QuoteModalProps {
   onClose: () => void;
 }
 
-const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose }) => {
+const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [privacyAccepted, setPrivacyAccepted] = useState(false);
@@ -271,7 +271,7 @@ const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose }) => {
   };
 
   return (
-    <Transition appear show={isOpen} as={Fragment}>
+    <Transition appear={true} show={isOpen} as={Fragment}>
       <Dialog as="div" className="relative z-50" onClose={onClose}>
         <Transition.Child
           as={Fragment}
@@ -473,7 +473,7 @@ const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose }) => {
                       className="mt-1 h-4 w-4 text-gold focus:ring-gold border-gray-300 rounded"
                     />
                     <label htmlFor="had_ip_gt_10_last_4y" className="text-sm text-gray-700 cursor-pointer">
-                      Avez-vous eu une IPP {'>'} 10% au cours des 4 dernières années ?
+                      Avez-vous eu une IPP &gt; 10% au cours des 4 dernières années ?
                     </label>
                   </div>
 
